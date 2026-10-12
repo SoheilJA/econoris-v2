@@ -70,7 +70,9 @@
     else window.addEventListener('load', onComplete, { once: true });
 
     function tick(now) {
-      const t = now - start;
+      // rAF timestamps can predate `start` by a few ms on the first frame,
+      // so clamp to keep progress non-negative.
+      const t = Math.max(0, now - start);
       const denom = loadComplete ? Math.max(loadAt, minDur) : minDur;
       let p = Math.min(100, (t / denom) * 100);
 
@@ -79,9 +81,10 @@
         const overshoot = (t - loadAt) / 400;
         p = Math.max(p, Math.min(100, 100 - (1 - overshoot) * 100));
       }
+      p = Math.max(0, p);
 
       // Liquid fill (inverted: starts at bottom, fills upward as p increases)
-      const fillH = (p / 100) * 180;
+      const fillH = Math.max(0, (p / 100) * 180);
       const yTop = 200 - fillH;
       liquid.setAttribute('height', fillH);
       liquid.setAttribute('y', yTop);

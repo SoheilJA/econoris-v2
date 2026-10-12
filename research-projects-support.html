@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>حمایت از طرح‌های پژوهشی — اکونوریس</title>
+  <meta name="description" content="حمایت از طرح‌های پژوهشی در اکونوریس؛ تامین منابع، هدایت علمی و پشتیبانی اجرایی طرح‌های تحقیقاتی مصوب تا دستیابی به نتایج.">
+  <meta name="theme-color" content="#070B1F">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:{900:'#050818',800:'#070B1F',700:'#0C1233',600:'#131A4A',500:'#1A2360'},blue:'#2F6BFF',violet:'#7C4DFF',teal:'#00D4C2',lime:'#B6F23A',coral:'#FF6B6B',amber:'#FFB938',magenta:'#FF4FA3'},fontFamily:{sans:['Vazirmatn','system-ui','sans-serif']}}}};</script>
+  <link rel="stylesheet" href="../assets/css/custom.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.0.42/dist/lenis.min.js"></script>
+</head>
+<body class="bg-ink-800 text-white font-sans accent-teal">
+  <div data-host="preloader"></div>
+  <div data-host="header"></div>
+
+  <main id="main">
+    <div class="pt-[calc(var(--header-h)+1.5rem)] container-x">
+      <nav class="text-xs opacity-60 flex items-center gap-2"><a href="../index.html" class="hover:opacity-100">خانه</a><span>/</span><span class="opacity-80">حمایت از طرح‌های پژوهشی</span></nav>
+    </div>
+
+    <!-- HERO -->
+    <section class="relative py-20 md:py-28 overflow-hidden bg-aurora bg-grain">
+      <div class="absolute inset-0 bg-grain opacity-30"></div>
+      <div class="container-x relative text-center">
+        <div class="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-widest mb-4 reveal glass" style="color:var(--c-teal);">
+          <span class="pulse-dot inline-block w-2 h-2 rounded-full me-2" style="background:var(--c-teal);"></span>دسته خدمات
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 reveal" data-hero-title>
+          <span class="block">حمایت از طرح‌های</span>
+          <span class="block text-aurora">پژوهشی</span>
+        </h1>
+        <p class="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed reveal">تامین منابع، هدایت علمی و پشتیبانی اجرایی طرح‌های تحقیقاتی مصوب تا دستیابی به نتایج.</p>
+      </div>
+    </section>
+
+    <!-- Timeline / Roadmap -->
+    <section class="relative py-20 md:py-28 bg-ink-900 overflow-hidden">
+      <div class="absolute inset-0 bg-line-grid opacity-30"></div>
+      <div class="container-x relative">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="text-3xl md:text-5xl font-extrabold mb-4 reveal">مسیر حمایت از طرح پژوهشی</h2>
+          <p class="text-white/70 reveal">یک نقشه راه پنج‌مرحله‌ای از تامین بودجه تا ارتباط با صنعت.</p>
+        </div>
+
+        <!-- Horizontal timeline (desktop) / vertical (mobile) -->
+        <div class="relative max-w-5xl mx-auto">
+          <!-- Horizontal line -->
+          <div class="absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-l from-[var(--c-blue)] via-[var(--c-violet)] to-[var(--c-teal)] hidden lg:block"></div>
+          <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-2 relative" id="timelineStages"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anchored sections -->
+    <section id="budget" class="relative py-20 bg-ink-800 overflow-hidden">
+      <div class="container-x"><div class="grid lg:grid-cols-[auto_1fr] gap-8">
+        <div class="lg:sticky lg:top-32"><div class="text-7xl font-extrabold text-aurora">۰۱</div><div class="text-xs opacity-50 mt-2">تخصیص بودجه</div></div>
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-6 reveal" style="color:var(--c-blue);">تخصیص بودجه پژوهشی</h2>
+          <p class="text-white/80 leading-loose mb-4 reveal">اکونوریس با تأمین منابع مالی لازم برای اجرای طرح‌های پژوهشی مصوب، تیم‌ها را از نگرانی تأمین هزینه آزاد می‌سازد تا بر فعالیت‌های علمی متمرکز شوند.</p>
+          <p class="text-white/80 leading-loose reveal">این بودجه، هزینه‌های آزمایشگاهی، تجهیزات و نیروی انسانی مرتبط با اجرای طرح را پوشش می‌دهد.</p>
+        </div>
+      </div></div>
+    </section>
+
+    <section id="facilities" class="relative py-20 bg-ink-900 overflow-hidden">
+      <div class="container-x"><div class="grid lg:grid-cols-[auto_1fr] gap-8">
+        <div class="lg:sticky lg:top-32"><div class="text-7xl font-extrabold text-aurora">۰۲</div><div class="text-xs opacity-50 mt-2">امکانات آزمایشگاهی</div></div>
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-6 reveal" style="color:var(--c-violet);">امکانات آزمایشگاهی</h2>
+          <p class="text-white/80 leading-loose mb-4 reveal">دسترسی به زیرساخت‌های پیشرفته پژوهش، تجهیزات تخصصی و فضای آزمایشگاهی مجهز، به تیم‌ها اجازه می‌دهد تا آزمون‌های تخصصی را در مراحل مختلف اجرای طرح انجام دهند.</p>
+          <p class="text-white/80 leading-loose reveal">این امکانات در کنار مشاوره فنی، یک بستر کامل برای اجرای طرح ارائه می‌کنند.</p>
+        </div>
+      </div></div>
+    </section>
+
+    <section id="scientific-consulting" class="relative py-20 bg-ink-800 overflow-hidden">
+      <div class="container-x"><div class="grid lg:grid-cols-[auto_1fr] gap-8">
+        <div class="lg:sticky lg:top-32"><div class="text-7xl font-extrabold text-aurora">۰۳</div><div class="text-xs opacity-50 mt-2">مشاوره علمی</div></div>
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-6 reveal" style="color:var(--c-teal);">مشاوره علمی تخصصی</h2>
+          <p class="text-white/80 leading-loose mb-4 reveal">هدایت علمی طرح توسط اساتید متخصص و پژوهشگران مجرب، مسیر اجرا را در راستای استانداردهای علمی روز نگه می‌دارد.</p>
+          <p class="text-white/80 leading-loose reveal">این هدایت، از انحراف طرح و هدررفت منابع جلوگیری می‌کند.</p>
+        </div>
+      </div></div>
+    </section>
+
+    <section id="publication-support" class="relative py-20 bg-ink-900 overflow-hidden">
+      <div class="container-x"><div class="grid lg:grid-cols-[auto_1fr] gap-8">
+        <div class="lg:sticky lg:top-32"><div class="text-7xl font-extrabold text-aurora">۰۴</div><div class="text-xs opacity-50 mt-2">انتشار مقالات</div></div>
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-6 reveal" style="color:var(--c-amber);">حمایت از انتشار مقالات</h2>
+          <p class="text-white/80 leading-loose mb-4 reveal">پشتیبانی در نگارش، انتخاب ژورنال مناسب و فرآیند داوری، نتایج طرح را به مقالات علمی معتبر تبدیل می‌کند.</p>
+          <p class="text-white/80 leading-loose reveal">این امر، اعتبار علمی تیم و طرح را افزایش می‌دهد.</p>
+        </div>
+      </div></div>
+    </section>
+
+    <section id="industry-connection" class="relative py-20 bg-ink-800 overflow-hidden">
+      <div class="container-x"><div class="grid lg:grid-cols-[auto_1fr] gap-8">
+        <div class="lg:sticky lg:top-32"><div class="text-7xl font-extrabold text-aurora">۰۵</div><div class="text-xs opacity-50 mt-2">ارتباط با صنعت</div></div>
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-6 reveal" style="color:var(--c-magenta);">ارتباط با صنعت</h2>
+          <p class="text-white/80 leading-loose mb-4 reveal">پل ارتباطی میان پژوهش و صنعت دارو، نتایج طرح را به فرصت‌های تجاری‌سازی و همکاری صنعتی تبدیل می‌کند.</p>
+          <p class="text-white/80 leading-loose reveal">این مرحله، چرخه کامل از پژوهش تا بازار را می‌بندد.</p>
+        </div>
+      </div></div>
+    </section>
+
+    <!-- CTA -->
+    <section class="relative py-16 overflow-hidden" style="background:var(--grad-consult);">
+      <div class="absolute inset-0 bg-grain"></div>
+      <div class="container-x relative text-center">
+        <h2 class="text-2xl md:text-4xl font-extrabold mb-4 reveal">از متخصصین ما مشاوره رایگان دریافت کنید</h2>
+        <a href="tel:09192639746" class="inline-block text-2xl md:text-4xl font-extrabold mb-6" dir="ltr">۰۹۱۹-۲۶۳-۹۷۴۶</a>
+        <div><a href="../contact.html" class="btn bg-white text-ink-800" style="color:var(--c-ink-800);font-weight:800;">تماس با پشتیبانی</a></div>
+      </div>
+    </section>
+  </main>
+
+  <div data-host="footer"></div>
+
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/content.js"></script>
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/preloader.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/animations.js"></script>
+  <script src="../assets/js/page-research-projects.js"></script>
+</body>
+</html>

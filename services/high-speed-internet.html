@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>اینترنت پرسرعت — اکونوریس | دسترسی به منابع علمی</title>
+  <meta name="description" content="اینترنت پرسرعت اکونوریس؛ تسهیل دسترسی به منابع علمی معتبر، پایگاه‌های داده آنلاین و ابزارهای پژوهشی پیشرفته.">
+  <meta name="theme-color" content="#070B1F">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:{900:'#050818',800:'#070B1F',700:'#0C1233',600:'#131A4A',500:'#1A2360'},blue:'#2F6BFF',violet:'#7C4DFF',teal:'#00D4C2',lime:'#B6F23A',coral:'#FF6B6B',amber:'#FFB938',magenta:'#FF4FA3'},fontFamily:{sans:['Vazirmatn','system-ui','sans-serif']}}}};</script>
+  <link rel="stylesheet" href="../assets/css/custom.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r150/three.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.0.42/dist/lenis.min.js"></script>
+</head>
+<body class="bg-ink-800 text-white font-sans accent-cyan">
+
+  <div data-host="preloader"></div>
+  <div data-host="header"></div>
+
+  <main id="main">
+    <div class="pt-[calc(var(--header-h)+1.5rem)] container-x">
+      <nav class="text-xs opacity-60 flex items-center gap-2"><a href="../index.html" class="hover:opacity-100">خانه</a><span>/</span><a href="shared-workspace.html" class="hover:opacity-100">فضای کار اشتراکی</a><span>/</span><span class="opacity-80">اینترنت پرسرعت</span></nav>
+    </div>
+
+    <!-- HERO with Three.js globe -->
+    <section class="relative min-h-[80svh] flex items-center overflow-hidden bg-aurora bg-grain">
+      <canvas id="globeCanvas" class="absolute inset-0 w-full h-full" style="z-index:0;"></canvas>
+      <div class="absolute inset-0 bg-gradient-to-l from-ink-800 via-ink-800/40 to-transparent" style="z-index:1;"></div>
+      <div class="container-x relative z-10 py-20">
+        <div class="max-w-2xl">
+          <div class="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-widest mb-4 reveal glass" style="color:var(--c-blue);">
+            <span class="pulse-dot inline-block w-2 h-2 rounded-full me-2" style="background:var(--c-blue);"></span>فضای کار اشتراکی
+          </div>
+          <h1 class="text-4xl md:text-6xl font-extrabold mb-6 reveal" data-hero-title>
+            <span class="block">اینترنت پرسرعت</span>
+            <span class="block text-aurora">در اکونوریس</span>
+          </h1>
+          <p class="text-lg text-white/80 leading-relaxed mb-8 reveal">تسهیل دسترسی به منابع معتبر علمی و پشتیبانی از فعالیت‌های پژوهشی که به پهنای باند بالا و اتصال پایدار نیاز دارند.</p>
+          <div class="flex flex-wrap gap-3 reveal">
+            <a href="../contact.html" class="btn btn-primary magnetic" data-magnetic>درخواست مشاوره رایگان</a>
+            <a href="#benefits" class="btn btn-ghost">مشاهده مزایا</a>
+          </div>
+        </div>
+      </div>
+      <!-- Floating resource chips -->
+      <div class="absolute inset-0 pointer-events-none" style="z-index:2;" aria-hidden="true">
+        <div class="absolute top-[25%] right-[5%] glass rounded-full px-3 py-1.5 text-xs font-bold latn float">PubMed</div>
+        <div class="absolute top-[55%] right-[3%] glass rounded-full px-3 py-1.5 text-xs font-bold latn float-slow">ScienceDirect</div>
+        <div class="absolute top-[40%] left-[3%] glass rounded-full px-3 py-1.5 text-xs font-bold latn float" style="animation-delay:-3s;">SpringerLink</div>
+        <div class="absolute top-[70%] left-[5%] glass rounded-full px-3 py-1.5 text-xs font-bold latn float-slow">SciFinder</div>
+        <div class="absolute top-[20%] left-[15%] glass rounded-full px-3 py-1.5 text-xs font-bold latn float" style="animation-delay:-5s;">Reaxys</div>
+        <div class="absolute top-[80%] right-[20%] glass rounded-full px-3 py-1.5 text-xs font-bold latn float-slow" style="animation-delay:-2s;">ClinicalTrials.gov</div>
+      </div>
+    </section>
+
+    <!-- Speedometer + download bars -->
+    <section class="relative py-20 md:py-28 bg-ink-900 overflow-hidden">
+      <div class="absolute inset-0 bg-dot-grid opacity-40"></div>
+      <div class="container-x relative">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Decorative speedometer (no real numbers) -->
+          <div class="reveal text-center">
+            <svg viewBox="0 0 240 160" class="w-full max-w-md mx-auto">
+              <defs>
+                <linearGradient id="speedGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#2F6BFF"/>
+                  <stop offset="50%" stop-color="#7C4DFF"/>
+                  <stop offset="100%" stop-color="#00D4C2"/>
+                </linearGradient>
+              </defs>
+              <!-- Gauge arc background -->
+              <path d="M30,140 A90,90 0 0,1 210,140" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="12" stroke-linecap="round"/>
+              <!-- Gauge arc filled (decorative, no specific speed) -->
+              <path id="speedArc" d="M30,140 A90,90 0 0,1 210,140" fill="none" stroke="url(#speedGrad)" stroke-width="12" stroke-linecap="round" class="draw-path"/>
+              <!-- Needle -->
+              <line id="speedNeedle" x1="120" y1="140" x2="180" y2="80" stroke="#FFB938" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="120" cy="140" r="8" fill="#FFB938"/>
+              <!-- Center label -->
+              <text x="120" y="125" text-anchor="middle" fill="white" font-size="11" opacity="0.6">پهنای باند</text>
+            </svg>
+            <p class="text-xs opacity-50 mt-2">* نمایش نمادین</p>
+          </div>
+          <div>
+            <div class="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-widest mb-4 reveal" style="background:rgba(47,107,255,0.12);color:var(--c-blue);">دسترسی</div>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4 reveal">اینترنت پرسرعت در اکونوریس: تسهیل دسترسی به منابع معتبر علمی</h2>
+            <p class="text-white/80 leading-loose mb-6 reveal">دسترسی پایدار و پرسرعت به اینترنت، یک پیش‌نیاز حیاتی برای پژوهش مدرن است. در اکونوریس، این دسترسی به‌گونه‌ای طراحی شده که نیازهای سنگین پژوهشی، از دانلود مقالات حجیم تا کار با پایگاه‌های داده آنلاین، به‌خوبی پشتیبانی شود.</p>
+            <!-- Download progress bars -->
+            <div class="space-y-3" id="downloadBars">
+              <div class="glass rounded-xl p-3">
+                <div class="flex justify-between text-xs mb-2"><span>دانلود مقاله علمی</span><span class="latn">PDF</span></div>
+                <div class="h-2 bg-white/10 rounded-full overflow-hidden"><div class="h-full rounded-full" style="background:var(--grad-aurora);width:0%;" data-bar="80"></div></div>
+              </div>
+              <div class="glass rounded-xl p-3">
+                <div class="flex justify-between text-xs mb-2"><span>بارگذاری مجموعه‌داده</span><span class="latn">Dataset</span></div>
+                <div class="h-2 bg-white/10 rounded-full overflow-hidden"><div class="h-full rounded-full" style="background:var(--grad-aurora);width:0%;" data-bar="60"></div></div>
+              </div>
+              <div class="glass rounded-xl p-3">
+                <div class="flex justify-between text-xs mb-2"><span>کنفرانس آنلاین</span><span class="latn">Live</span></div>
+                <div class="h-2 bg-white/10 rounded-full overflow-hidden"><div class="h-full rounded-full" style="background:var(--grad-aurora);width:0%;" data-bar="95"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 benefit cards -->
+    <section id="benefits" class="relative py-20 md:py-28 bg-aurora bg-grain overflow-hidden">
+      <div class="container-x relative">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <div class="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-widest mb-4 reveal" style="background:rgba(0,212,194,0.12);color:var(--c-teal);">مزایا</div>
+          <h2 class="text-3xl md:text-5xl font-extrabold mb-4 reveal">پنج مزیت کلیدی</h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6" id="benefitsGrid"></div>
+      </div>
+    </section>
+
+    <!-- 6 heavy-internet research activities — horizontal pinned rail (desktop) / vertical list (mobile) -->
+    <section class="relative py-20 md:py-28 bg-ink-900 overflow-hidden">
+      <div class="absolute inset-0 bg-line-grid opacity-30"></div>
+      <div class="container-x relative">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <div class="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-widest mb-4 reveal" style="background:rgba(124,77,255,0.12);color:var(--c-violet);">فعالیت‌ها</div>
+          <h2 class="text-3xl md:text-5xl font-extrabold mb-4 reveal">۶ فعالیت پژوهشی نیازمند پهنای باند بالا</h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" id="activitiesGrid"></div>
+      </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="relative py-20 overflow-hidden bg-ink-800">
+      <div class="container-x">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-2xl md:text-4xl font-extrabold mb-6 reveal">پهنای باند بالا، شتاب پژوهش شما</h2>
+          <p class="text-white/80 leading-loose mb-8 reveal">با اینترنت پرسرعت اکونوریس، فعالیت‌های پژوهشی سنگین به‌راحتی قابل اجرا هستند و تیم شما می‌تواند بدون نگرانی از کندی اتصال، روی کیفیت علمی کار متمرکز باشد.</p>
+          <a href="../contact.html" class="btn btn-primary magnetic" data-magnetic>درخواست مشاوره رایگان</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="relative py-16 overflow-hidden" style="background:var(--grad-consult);">
+      <div class="absolute inset-0 bg-grain"></div>
+      <div class="container-x relative text-center">
+        <h2 class="text-2xl md:text-4xl font-extrabold mb-4 reveal">از متخصصین ما مشاوره رایگان دریافت کنید</h2>
+        <a href="tel:09192639746" class="inline-block text-2xl md:text-4xl font-extrabold mb-6" dir="ltr">۰۹۱۹-۲۶۳-۹۷۴۶</a>
+        <div><a href="../contact.html" class="btn bg-white text-ink-800" style="color:var(--c-ink-800);font-weight:800;">تماس با پشتیبانی</a></div>
+      </div>
+    </section>
+
+    <!-- RELATED -->
+    <section class="relative py-16 bg-ink-900">
+      <div class="container-x">
+        <h3 class="text-center font-extrabold text-xl md:text-2xl mb-8 reveal">خدمات مرتبط</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+          <a href="information-resources.html" class="glass rounded-2xl p-5 tilt-card spotlight reveal"><div class="text-xs opacity-50 latn mb-1">Information Resources</div><h4 class="font-bold mb-1">دسترسی به منابع اطلاعاتی</h4><p class="text-xs opacity-70 leading-relaxed">پایگاه‌های داده و ژورنال‌ها.</p></a>
+          <a href="research-desk.html" class="glass rounded-2xl p-5 tilt-card spotlight reveal"><div class="text-xs opacity-50 latn mb-1">Research Desk</div><h4 class="font-bold mb-1">میز پژوهشی</h4><p class="text-xs opacity-70 leading-relaxed">دسترسی ساختاریافته.</p></a>
+          <a href="laboratory.html" class="glass rounded-2xl p-5 tilt-card spotlight reveal"><div class="text-xs opacity-50 latn mb-1">Laboratory</div><h4 class="font-bold mb-1">آزمایشگاه</h4><p class="text-xs opacity-70 leading-relaxed">تجهیزات پیشرفته.</p></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-host="footer"></div>
+
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/content.js"></script>
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/preloader.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/animations.js"></script>
+  <script src="../assets/js/three-globe.js"></script>
+  <script src="../assets/js/page-high-speed-internet.js"></script>
+</body>
+</html>

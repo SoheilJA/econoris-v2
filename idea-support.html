@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>حمایت از ایده — اکونوریس</title>
+  <meta name="description" content="حمایت از ایده‌های نوآورانه در اکونوریس؛ اعتبارسنجی، پرورش و شکل‌دهی ایده‌ها به مدل‌های کسب‌وکار پایدار.">
+  <meta name="theme-color" content="#070B1F">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:{900:'#050818',800:'#070B1F',700:'#0C1233',600:'#131A4A',500:'#1A2360'},blue:'#2F6BFF',violet:'#7C4DFF',teal:'#00D4C2',lime:'#B6F23A',coral:'#FF6B6B',amber:'#FFB938',magenta:'#FF4FA3'},fontFamily:{sans:['Vazirmatn','system-ui','sans-serif']}}}};</script>
+  <link rel="stylesheet" href="../assets/css/custom.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.0.42/dist/lenis.min.js"></script>
+</head>
+<body class="bg-ink-800 text-white font-sans accent-coral">
+  <div data-host="preloader"></div>
+  <div data-host="header"></div>
+
+  <main id="main">
+    <div class="pt-[calc(var(--header-h)+1.5rem)] container-x">
+      <nav class="text-xs opacity-60 flex items-center gap-2"><a href="../index.html" class="hover:opacity-100">خانه</a><span>/</span><span class="opacity-80">حمایت از ایده</span></nav>
+    </div>
+
+    <!-- HERO with rocket launch funnel -->
+    <section class="relative py-20 md:py-28 overflow-hidden bg-aurora bg-grain">
+      <div class="absolute inset-0 bg-grain opacity-30"></div>
+      <div class="container-x relative">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <div class="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-widest mb-4 reveal glass" style="color:var(--c-coral);">
+            <span class="pulse-dot inline-block w-2 h-2 rounded-full me-2" style="background:var(--c-coral);"></span>دسته خدمات
+          </div>
+          <h1 class="text-4xl md:text-6xl font-extrabold mb-6 reveal" data-hero-title>
+            <span class="block">حمایت از</span>
+            <span class="block text-aurora">ایده‌ها</span>
+          </h1>
+          <p class="text-lg text-white/80 leading-relaxed reveal">فرآیند اعتبارسنجی، پرورش و شکل‌دهی ایده‌های نوآورانه به مدل‌های کسب‌وکار پایدار در شتاب‌دهنده اکونوریس.</p>
+        </div>
+
+        <!-- Rocket launch SVG funnel -->
+        <div class="max-w-4xl mx-auto">
+          <svg viewBox="0 0 600 600" class="w-full max-w-md mx-auto" id="rocketSVG">
+            <defs>
+              <linearGradient id="rocketBody" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FF6B6B"/>
+                <stop offset="100%" stop-color="#FF4FA3"/>
+              </linearGradient>
+              <linearGradient id="flame" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FFB938"/>
+                <stop offset="60%" stop-color="#FF6B6B"/>
+                <stop offset="100%" stop-color="#FF4FA3" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <!-- Launch pad -->
+            <rect x="200" y="500" width="200" height="20" fill="#0C1233" stroke="#7C4DFF" stroke-width="1.5"/>
+            <line x1="100" y1="520" x2="500" y2="520" stroke="#7C4DFF" stroke-width="1" opacity="0.4"/>
+            <!-- Flame -->
+            <path id="rocketFlame" d="M 280,440 Q 300,520 320,440 Q 300,500 280,440 Z" fill="url(#flame)" opacity="0.8"/>
+            <!-- Rocket body -->
+            <g id="rocketBody">
+              <path d="M 280,300 Q 280,260 300,240 Q 320,260 320,300 L 320,440 L 280,440 Z" fill="url(#rocketBody)"/>
+              <!-- Window -->
+              <circle cx="300" cy="320" r="12" fill="#00D4C2" stroke="white" stroke-width="2"/>
+              <!-- Fins -->
+              <path d="M 280,400 L 260,440 L 280,440 Z" fill="#FFB938"/>
+              <path d="M 320,400 L 340,440 L 320,440 Z" fill="#FFB938"/>
+            </g>
+            <!-- Stars -->
+            <g class="rocket-stars">
+              <circle cx="100" cy="100" r="2" fill="white" opacity="0.6"/>
+              <circle cx="500" cy="80" r="1.5" fill="white" opacity="0.5"/>
+              <circle cx="150" cy="200" r="1.5" fill="white" opacity="0.7"/>
+              <circle cx="450" cy="250" r="2" fill="white" opacity="0.5"/>
+              <circle cx="80" cy="350" r="1.5" fill="white" opacity="0.6"/>
+              <circle cx="520" cy="400" r="2" fill="white" opacity="0.6"/>
+            </g>
+            <!-- Trail -->
+            <path id="rocketTrail" d="M 300,500 L 300,560" stroke="url(#flame)" stroke-width="3" fill="none" class="draw-path" opacity="0.5"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 stages as anchored sections -->
+    <section id="consulting" class="relative py-20 md:py-28 bg-ink-900 overflow-hidden">
+      <div class="absolute top-0 left-0 w-72 h-72 blob" style="background:var(--c-coral);opacity:0.3;"></div>
+      <div class="container-x relative">
+        <div class="grid lg:grid-cols-[auto_1fr] gap-8 items-start">
+          <div class="lg:sticky lg:top-32">
+            <div class="text-7xl font-extrabold text-aurora">۰۱</div>
+            <div class="text-xs opacity-50 tracking-widest mt-2">مرحله ۱</div>
+          </div>
+          <div>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-6 reveal">مشاوره تخصصی</h2>
+            <p class="text-white/80 leading-loose mb-4 reveal">اعتبارسنجی، پرورش و شکل‌دهی ایده‌های نوآورانه به مدل‌های کسب‌وکار پایدار. مشاوران اکونوریس با تجربه‌ی علمی و صنعتی، تیم‌ها را در مرحله ایده‌پردازی یاری می‌کنند.</p>
+            <p class="text-white/80 leading-loose reveal">این مرحله شامل ارزیابی فنی، بررسی بازارپسندی و طراحی اولیه مدل کسب‌وکار است.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="networking" class="relative py-20 md:py-28 bg-ink-800 overflow-hidden">
+      <div class="absolute top-0 right-0 w-72 h-72 blob" style="background:var(--c-violet);opacity:0.3;"></div>
+      <div class="container-x relative">
+        <div class="grid lg:grid-cols-[auto_1fr] gap-8 items-start">
+          <div class="lg:sticky lg:top-32">
+            <div class="text-7xl font-extrabold text-aurora">۰۲</div>
+            <div class="text-xs opacity-50 tracking-widest mt-2">مرحله ۲</div>
+          </div>
+          <div>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-6 reveal">شبکه‌سازی</h2>
+            <p class="text-white/80 leading-loose mb-4 reveal">گسترش شبکه ارتباطی و معرفی به ذی‌نفعان صنعت دارو. اکونوریس با شبکه‌ای از اساتید، متخصصان و فعالان صنعت، تیم‌ها را به ذی‌نفعان مرتبط متصل می‌کند.</p>
+            <p class="text-white/80 leading-loose reveal">این شبکه، فرصت‌های همکاری، جذب سرمایه و دسترسی به تخصص‌های مکمل را فراهم می‌کند.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="business-development" class="relative py-20 md:py-28 bg-ink-900 overflow-hidden">
+      <div class="absolute top-0 left-0 w-72 h-72 blob" style="background:var(--c-teal);opacity:0.3;"></div>
+      <div class="container-x relative">
+        <div class="grid lg:grid-cols-[auto_1fr] gap-8 items-start">
+          <div class="lg:sticky lg:top-32">
+            <div class="text-7xl font-extrabold text-aurora">۰۳</div>
+            <div class="text-xs opacity-50 tracking-widest mt-2">مرحله ۳</div>
+          </div>
+          <div>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-6 reveal">توسعه تجاری</h2>
+            <p class="text-white/80 leading-loose mb-4 reveal">طراحی مدل کسب‌وکار، تدوین برنامه درآمدی و مسیر تجاری‌سازی. تیم‌ها با مشاوره متخصصان، مدل کسب‌وکار خود را بهبود داده و مسیر درآمدزایی را طراحی می‌کنند.</p>
+            <p class="text-white/80 leading-loose reveal">این مرحله، ایده را به یک فرصت تجاری قابل دفاع تبدیل می‌کند.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="funding" class="relative py-20 md:py-28 bg-ink-800 overflow-hidden">
+      <div class="absolute top-0 right-0 w-72 h-72 blob" style="background:var(--c-amber);opacity:0.3;"></div>
+      <div class="container-x relative">
+        <div class="grid lg:grid-cols-[auto_1fr] gap-8 items-start">
+          <div class="lg:sticky lg:top-32">
+            <div class="text-7xl font-extrabold text-aurora">۰۴</div>
+            <div class="text-xs opacity-50 tracking-widest mt-2">مرحله ۴</div>
+          </div>
+          <div>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-6 reveal">منابع مالی</h2>
+            <p class="text-white/80 leading-loose mb-4 reveal">تسهیل دسترسی به منابع مالی و معرفی به سرمایه‌گذاران. اکونوریس تیم‌ها را برای جذب سرمایه آماده می‌کند و آن‌ها را به شبکه سرمایه‌گذاران مرتبط متصل می‌سازد.</p>
+            <p class="text-white/80 leading-loose reveal">این مرحله، سوخت لازم برای اجرای طرح را فراهم می‌کند.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="relative py-16 overflow-hidden" style="background:var(--grad-consult);">
+      <div class="absolute inset-0 bg-grain"></div>
+      <div class="container-x relative text-center">
+        <h2 class="text-2xl md:text-4xl font-extrabold mb-4 reveal">از متخصصین ما مشاوره رایگان دریافت کنید</h2>
+        <a href="tel:09192639746" class="inline-block text-2xl md:text-4xl font-extrabold mb-6" dir="ltr">۰۹۱۹-۲۶۳-۹۷۴۶</a>
+        <div><a href="../contact.html" class="btn bg-white text-ink-800" style="color:var(--c-ink-800);font-weight:800;">تماس با پشتیبانی</a></div>
+      </div>
+    </section>
+  </main>
+
+  <div data-host="footer"></div>
+
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/content.js"></script>
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/preloader.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/animations.js"></script>
+  <script src="../assets/js/page-idea-support.js"></script>
+</body>
+</html>

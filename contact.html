@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>تماس با ما — اکونوریس | درخواست مشاوره رایگان</title>
+  <meta name="description" content="برای درخواست مشاوره رایگان با شتاب‌دهنده اکونوریس تماس بگیرید. آدرس: مشهد، بلوار ملک‌الشعرا بهار، ساختمان بیوتکنولوژی، طبقه ۴.">
+  <meta name="theme-color" content="#070B1F">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="تماس با اکونوریس — شتاب‌دهنده داروسازی">
+  <meta property="og:locale" content="fa_IR">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: {
+        ink: { 900: '#050818', 800: '#070B1F', 700: '#0C1233', 600: '#131A4A', 500: '#1A2360' },
+        mist: '#F3F6FF', mint: '#EEF9F6', cream: '#FFF6F0',
+        blue: '#2F6BFF', violet: '#7C4DFF', teal: '#00D4C2',
+        lime: '#B6F23A', coral: '#FF6B6B', amber: '#FFB938', magenta: '#FF4FA3',
+      },
+      fontFamily: { sans: ['Vazirmatn', 'system-ui', 'sans-serif'] },
+    } } };
+  </script>
+
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r150/three.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.0.42/dist/lenis.min.js"></script>
+</head>
+<body class="bg-ink-800 text-white font-sans">
+
+  <div data-host="preloader"></div>
+  <div data-host="header"></div>
+
+  <main id="main">
+
+    <!-- Breadcrumb -->
+    <div class="pt-[calc(var(--header-h)+1.5rem)] container-x">
+      <nav class="text-xs opacity-60 flex items-center gap-2" aria-label="مسیر">
+        <a href="index.html" class="hover:opacity-100">خانه</a>
+        <span>/</span>
+        <span class="opacity-80">تماس با ما</span>
+      </nav>
+    </div>
+
+    <!-- ============ HERO ============ -->
+    <section class="relative py-20 md:py-28 overflow-hidden bg-aurora bg-grain">
+      <!-- Animated signal/connection SVG background -->
+      <svg class="absolute inset-0 w-full h-full opacity-50" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" id="signalBG">
+        <defs>
+          <linearGradient id="sigGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#2F6BFF" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#00D4C2" stop-opacity="0.2"/>
+          </linearGradient>
+        </defs>
+        <g id="signalLines"></g>
+        <g id="signalNodes"></g>
+      </svg>
+
+      <div class="container-x relative z-10 text-center">
+        <div class="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-widest mb-4 reveal glass" style="color: var(--c-teal);">
+          <span class="pulse-dot inline-block w-2 h-2 rounded-full bg-[var(--c-teal)] me-2"></span>
+          ارتباط با ما
+        </div>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 reveal" data-hero-title>
+          <span class="block">تماس با</span>
+          <span class="block text-aurora">اکونوریس</span>
+        </h1>
+        <p class="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed reveal">
+          اکونوریس، شتاب‌دهنده‌ای نوآور در حوزه نوآوری‌های دارویی و زیست‌فناوری، با هدف حمایت از تیم‌های علمی و استارت‌آپ‌های خلاق، در مسیر خلق آینده‌ای بهتر در حوزه سلامت گام برمی‌دارد.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ FORM ============ -->
+    <section class="relative py-20 md:py-28 bg-ink-800 overflow-hidden">
+      <div class="absolute top-20 right-0 w-80 h-80 blob" style="background: var(--c-violet); opacity: 0.4;"></div>
+      <div class="absolute bottom-10 left-0 w-72 h-72 blob" style="background: var(--c-teal); opacity: 0.35;"></div>
+
+      <div class="container-x relative">
+        <div class="grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-12">
+
+          <!-- Form -->
+          <div class="glass rounded-3xl p-6 md:p-10 reveal" id="consultForm">
+            <h2 class="text-2xl md:text-3xl font-extrabold mb-2">درخواست مشاوره رایگان</h2>
+            <p class="text-white/70 mb-8">درخواست خود را در فرم زیر ثبت نمایید تا کارشناسان ما با شما تماس بگیرند.</p>
+
+            <form id="consultFormEl" novalidate>
+              <!-- Honeypot -->
+              <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; opacity:0;" aria-hidden="true">
+
+              <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <div class="field">
+                  <input type="text" name="fullName" id="fullName" placeholder=" " required>
+                  <label for="fullName">نام و نام خانوادگی</label>
+                  <p class="text-xs text-[var(--c-coral)] mt-1 hidden" data-error="fullName">لطفاً نام خود را وارد کنید.</p>
+                </div>
+                <div class="field">
+                  <input type="tel" name="phone" id="phone" placeholder=" " required pattern="09\d{9}">
+                  <label for="phone">شماره تماس</label>
+                  <p class="text-xs text-[var(--c-coral)] mt-1 hidden" data-error="phone">شماره تماس معتبر وارد کنید (مثال: 09123456789).</p>
+                </div>
+              </div>
+
+              <div class="field mb-4">
+                <input type="email" name="email" id="email" placeholder=" ">
+                <label for="email">پست الکترونیکی (اختیاری)</label>
+              </div>
+
+              <!-- Request type chips -->
+              <div class="mb-4">
+                <label class="block text-sm font-bold mb-3">نوع درخواست (می‌توانید چند گزینه انتخاب کنید)</label>
+                <div class="flex flex-wrap gap-2" id="requestChips">
+                  <!-- chips injected -->
+                </div>
+              </div>
+
+              <div class="field mb-6">
+                <textarea name="message" id="message" rows="4" placeholder=" "></textarea>
+                <label for="message">پیام شما</label>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-full magnetic" data-magnetic>
+                <span data-submit-label>ثبت درخواست</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+            </form>
+
+            <!-- Success state -->
+            <div class="hidden text-center py-12" id="successState">
+              <div class="w-24 h-24 mx-auto mb-6 rounded-full grid place-items-center" style="background: var(--grad-aurora); box-shadow: var(--shadow-glow-teal);">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg>
+              </div>
+              <h3 class="text-2xl font-extrabold mb-3">درخواست شما ثبت شد!</h3>
+              <p class="text-white/70">کارشناسان ما به‌زودی تماس می‌گیرند.</p>
+            </div>
+          </div>
+
+          <!-- Info cards -->
+          <div class="space-y-4">
+            <!-- Address -->
+            <div class="glass rounded-3xl p-6 reveal tilt-card spotlight">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl grid place-items-center shrink-0" style="background: rgba(255,185,56,0.15); color: var(--c-amber);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-7 8-13a8 8 0 1 0-16 0c0 6 8 13 8 13Z"/><circle cx="12" cy="9" r="3"/></svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="font-bold mb-1">آدرس</h4>
+                  <p class="text-sm opacity-75 leading-relaxed mb-3" id="addressText">خراسان رضوی - مشهد - بلوار ملک‌الشعرا بهار - چهارراه بی‌سیم - بین جهاد ۴ و ۶ - ساختمان بیوتکنولوژی - طبقه ۴</p>
+                  <button class="text-xs font-bold inline-flex items-center gap-1 text-[var(--c-teal)]" data-copy="address">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+                    کپی آدرس
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="glass rounded-3xl p-6 reveal tilt-card spotlight">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl grid place-items-center shrink-0" style="background: rgba(0,212,194,0.15); color: var(--c-teal);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L20 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" transform="translate(-3 0)"/></svg>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-bold mb-1">تلفن تماس</h4>
+                  <a href="tel:09192639746" class="text-lg font-extrabold block hover:text-[var(--c-teal)] transition" dir="ltr">۰۹۱۹-۲۶۳-۹۷۴۶</a>
+                  <button class="text-xs font-bold inline-flex items-center gap-1 text-[var(--c-teal)] mt-2" data-copy="phone">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+                    کپی شماره
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Maps button -->
+            <div class="glass rounded-3xl p-6 reveal tilt-card spotlight">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl grid place-items-center shrink-0" style="background: rgba(124,77,255,0.15); color: var(--c-violet);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 20l-6-3V4l6 3m0 13 6-3m-6 3V7m6 13 6 3V7m-6 13V7m6-4-6-3"/></svg>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-bold mb-1">مسیریابی</h4>
+                  <p class="text-sm opacity-75 mb-3">برای مشاهده روی نقشه و مسیریابی، از دکمه زیر استفاده کنید.</p>
+                  <a href="https://maps.app.goo.gl/KPK78XQ3PnSSHeqZ6" target="_blank" rel="noopener" class="btn btn-ghost text-sm">
+                    مسیریابی با بلد
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mini abstract map -->
+            <div class="glass rounded-3xl p-6 reveal">
+              <h4 class="font-bold mb-3">نقشه نمایشی</h4>
+              <div class="relative aspect-video rounded-2xl overflow-hidden bg-ink-900">
+                <svg viewBox="0 0 400 220" class="w-full h-full">
+                  <!-- abstract city grid lines -->
+                  <g stroke="rgba(124,77,255,0.4)" stroke-width="1" fill="none">
+                    <path d="M0,40 L400,40 M0,90 L400,90 M0,140 L400,140 M0,190 L400,190"/>
+                    <path d="M60,0 L60,220 M140,0 L140,220 M220,0 L220,220 M300,0 L300,220 M360,0 L360,220"/>
+                  </g>
+                  <!-- river -->
+                  <path d="M0,150 Q100,140 200,160 T400,150" stroke="rgba(0,212,194,0.4)" stroke-width="3" fill="none" class="draw-path"/>
+                  <!-- pin -->
+                  <g transform="translate(220, 90)">
+                    <circle r="20" fill="rgba(255,79,163,0.2)" class="coming-pulse"/>
+                    <circle r="6" fill="#FF4FA3"/>
+                    <circle r="3" fill="white"/>
+                  </g>
+                </svg>
+                <button class="absolute bottom-3 left-3 right-3 btn btn-ghost text-xs py-2" id="loadMapBtn">نمایش نقشه واقعی</button>
+              </div>
+              <div id="osmFrame" class="hidden mt-3 aspect-video rounded-2xl overflow-hidden"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="relative py-16 overflow-hidden" style="background: var(--grad-consult);">
+      <div class="absolute inset-0 bg-grain"></div>
+      <div class="container-x relative text-center">
+        <h2 class="text-2xl md:text-4xl font-extrabold mb-3 reveal">آماده‌اید ایده‌تان را به بازار برسانید؟</h2>
+        <p class="opacity-90 mb-6 reveal">همین حالا فرم مشاوره رایگان را پر کنید یا مستقیم تماس بگیرید.</p>
+        <a href="tel:09192639746" class="btn bg-white text-ink-800" style="color: var(--c-ink-800); font-weight: 800;" dir="ltr">۰۹۱۹-۲۶۳-۹۷۴۶</a>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-host="footer"></div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/preloader.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/page-contact.js"></script>
+</body>
+</html>

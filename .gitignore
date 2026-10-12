@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+
+# Agent working notes (not part of the project)
+agent-progress.md
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.log
